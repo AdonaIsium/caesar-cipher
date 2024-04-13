@@ -1,8 +1,7 @@
+from art import logo
 # Greeting function
 def greet():
-    print("Welcome to the Caesar Cipher Encryption and Decryption Program")
-    print("This program will encrypt and decrypt your message using Caesar Cipher")
-    print("Let's get started")
+    print(logo)
 
 # Caesar Cipher function
 alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o","p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
