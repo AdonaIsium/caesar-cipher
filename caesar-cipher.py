@@ -4,6 +4,9 @@ def greet():
     print("This program will encrypt and decrypt your message using Caesar Cipher")
     print("Let's get started")
 
+# Caesar Cipher function
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o","p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
 def caesar():
     # User selects whether to encode or decode
     encode_or_decode = input("Would you like to encode or decode a message? (encode/decode): ")
@@ -15,20 +18,20 @@ def caesar():
     shift = int(input("Enter the shift value: "))
 
     # Program encodes or decodes message
-    def caesar_cipher(message, shift, encode_or_decode):
+    def caesar_cipher(input_message, shift_amount, en_or_de_choice):
         result = ""
-        if encode_or_decode == "encode" or encode_or_decode == "e":
-            for i in range(len(message)):
-                char = message[i]
+        if en_or_de_choice == "encode" or en_or_de_choice == "e":
+            for i in range(len(input_message)):
+                char = input_message[i]
                 if char.isalpha():
-                    result += chr((ord(char) + shift - 97) % 26 + 97)
+                    result += alphabet[(alphabet.index(char) + shift_amount) % 26]
                 else:
                     result += char
-        elif encode_or_decode == "decode" or encode_or_decode == "d":
-            for i in range(len(message)):
-                char = message[i]
+        elif en_or_de_choice == "decode" or en_or_de_choice == "d":
+            for i in range(len(input_message)):
+                char = input_message[i]
                 if char.isalpha():
-                    result += chr((ord(char) - shift - 97) % 26 + 97)
+                    result += alphabet[(alphabet.index(char) - shift_amount) % 26]
                 else:
                     result += char
         return result
